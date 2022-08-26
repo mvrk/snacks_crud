@@ -1,10 +1,10 @@
 {%  extends 'base.html' %}
 
 {% block content %}
-    <h1>Create snack</h1>
+    <h1 class="text-xl text-blue-800">Create snack</h1>
     <form method="post">
     {% csrf_token %}
     {{ form.as_p }}
-    <input type="submit" value="Create">
+    <input type="submit" value="Create" class="p-3 m-3 bg-blue-300 rounded-xl decoration-4 text-zinc-600 focus:bg-gray-200">
     </form>
 {% endblock %}
