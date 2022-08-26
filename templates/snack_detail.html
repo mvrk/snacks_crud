@@ -1,15 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Things</title>
-</head>
-<body>
-<h1>Things</h1>
-{% block content %}
+{%  extends 'base.html' %}
 
+{% block content %}
+<div>
+    <h2 class="text-3xl text-green-800 font-semibold p-2">Details about {{ snack.title }}</h2>
+    <p class="text-xl text-green-800">purchaser: {{ snack.purchaser }}</p>
+    <p class="text-xl text-green-800">Description: {{ snack.description }}</p>
+    <a href="{% url 'snack_update' snack.pk %}">Update Snack</a>
+    <a href="{% url 'snack_delete' snack.pk %}">Delete Snack</a>
+    <h3><a href="{% url 'snack_list' %}">Snack List</a></h3>
+</div>
 {% endblock content %}
-</body>
-</html>

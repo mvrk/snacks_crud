@@ -4,12 +4,35 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Things</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style type="text/tailwindcss">
+    @layer utilities {
+      .content-auto {
+        content-visibility: auto;
+      }
+    }
+    </style>
+    <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            clifford: '#da373d',
+          }
+        }
+      }
+    }
+  </script>
+
+    <title>Snacks</title>
 </head>
 <body>
-<h1>Things</h1>
+ <div class="bg-green-200 p-4 ">
+        <a class="px-8 text-gray-800 hover:text-blue-600" href="{% url 'snack_list' %}">Snacks List</a>
+        <a class="px-8 text-gray-800 hover:text-blue-600" href="{% url 'snack_create' %}">Create a new snack</a>
+    </div>
+<h1 class="text-3xl font-bold underline text-clifford">Snack Hub</h1>
 {% block content %}
-
 {% endblock content %}
 </body>
 </html>
